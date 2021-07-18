@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quote
+{% endblock %}
+
+{% block main %}
+<h1 class="text-primary m-3">Portfolio</h1>
+<table class="table table-hover">
+    <tr>
+        <th>Symbol</th>
+        <th>Company</th>
+        <th>Amount</th>
+        <th>Average Price</th>
+        <th>Current Price</th>
+    </tr>
+    {# expects an array of dict's #}
+    {% for holding in holdings %}
+        <tr>
+            <td>{{ holding.symbol }}</td>
+            <td>{{ holding.name }}</td>
+            <td>{{ holding.amount }}</td>
+            <td>{{ holding.price }}</td>
+            <td>{{ holding.currentPrice }}</td>
+        <tr>
+    {% endfor %}
+</table>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Cash">
+    funds available : ${{ cash }}
+  </button>
+{% endblock %}
