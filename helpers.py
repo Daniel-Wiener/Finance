@@ -36,7 +36,7 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(symbol):
+async def lookup(symbol):
     """Look up quote for symbol."""
 
     # Contact API
