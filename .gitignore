@@ -1,2 +1,7 @@
 /.DS_Store
 /.env
+/.db structure.key
+/.finance.db
+/__pycache__
+/.vscode
+
